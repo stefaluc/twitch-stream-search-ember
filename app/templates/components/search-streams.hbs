@@ -1,0 +1,7 @@
+<form onsubmit={{action 'display'}}>
+  <input type="text">
+  <button type="submit" value="Submit" {{action 'display'}} />
+</form>
+{{#if isSubmitted}}
+  <p>Submitted</p>
+{{/if}}
