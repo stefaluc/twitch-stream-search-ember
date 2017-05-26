@@ -1,3 +1,5 @@
 {{outlet}}
-{{search-streams addStreams=(action "search")}}
-{{display-streams streams=model}}
+{{search-streams
+  addStreams=(action "addStreams")
+  toggleLoading=(action "toggleLoading")}}
+{{display-streams data=model}}

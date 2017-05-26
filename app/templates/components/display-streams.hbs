@@ -1,6 +1,10 @@
 <ul>
   {{log streams}}
-  {{#each streams as |stream|}}
-    <li>{{stream}}</li>
-  {{/each}}
+  {{#if data.loading}}
+    <p>Loading...</p>
+  {{else}}
+    {{#each data.streams as |stream|}}
+      <li>{{stream}}</li>
+    {{/each}}
+  {{/if}}
 </ul>

@@ -3,7 +3,10 @@ import db from '../utils/db';
 
 export default Ember.Route.extend({
   model() {
-    return db.streams();
+    return {
+      streams: db.streams(),
+      loading: db.loading()
+    };
   },
 
   actions: {

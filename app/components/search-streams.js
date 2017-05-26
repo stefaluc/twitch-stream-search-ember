@@ -6,8 +6,12 @@ export default Ember.Component.extend({
   actions: {
     onSubmit(stream) {
       if (stream) {
+        this.get('toggleLoading')();
         this.set('value', "");
-        this.get('addStreams')(stream);
+        this.get('addStreams')(stream).then((result) => {
+          console.log(result);
+          this.get('toggleLoading');
+        });
       }
     }
   }

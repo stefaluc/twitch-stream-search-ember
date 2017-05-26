@@ -4,8 +4,18 @@ export default Ember.Object.create({
 
   _records: [],
 
+  isLoading: false,
+
   streams() {
     return Ember.copy(this._records);
+  },
+
+  loading() {
+    return this.isLoading;
+  },
+
+  setLoading() {
+    this.isLoading = !this.isLoading;
   },
 
   addStream(stream) {
