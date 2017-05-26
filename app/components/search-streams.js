@@ -1,9 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  value: "",
+
   actions: {
-    display() {
-      this.toggleProperty('isSubmitted');
+    onSubmit(stream) {
+      if (stream) {
+        this.set('value', "");
+        this.get('addStreams')(stream);
+      }
     }
   }
 });
